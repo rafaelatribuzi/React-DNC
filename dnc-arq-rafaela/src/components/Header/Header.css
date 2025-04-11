@@ -10,6 +10,10 @@ header ul, li {
     padding: 0;
 }
 
+nav {
+    display: flex;
+}
+
 nav a {
     color: #1d1d1d;
     font-size: 20px;
@@ -20,6 +24,11 @@ nav a {
 nav a:hover {
     color: #0c70f2;
 }
+
+.mobile-menu {
+    display: none;
+}
+
 
 nav ul {
     list-style: none;
@@ -34,11 +43,72 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #4D5053;
     font-size: 16px;
     transition: color 0.3s ease;
 }
     
 nav ul li a:hover {
     color: #007bff;
+}
+
+@media (max-width: 768px) {
+
+    nav.open {
+        align-items: end;
+        display: flex;
+    }
+
+    nav {
+        background-color: #1d1d1d;
+        border-left: 10px solid #333;
+        display: none;
+        flex-direction: column;
+        height: 100%;
+        padding: 37px;
+        position:fixed; /*função que deixa o elemento do topo ao fundo - tem que colocar right e top*/
+        right: 0;
+        top: 0;
+        width: 40vw; /*pega aproximadamente 40% da tela*/
+        z-index: 1; /*elemento fica à frente dos demais elementos da tela*/
+        box-shadow: -50vw 0px 0px 0px rgba(0, 0, 0, 0.75);
+
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav li {
+        display: flex;
+    }
+
+    nav a {
+        border-bottom: 1px solid white;
+        color: #ffffff;
+        font-size: 20px;
+        margin: 0 0 10px 0;
+        padding: 12px;
+        text-decoration: none;
+        width: 100%
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 25px;
+        margin: 0 0 12px;
+        padding: 12px;
+        width: fit-content; /*pega todo o conteúdo*/
+    }
+
+
+
 }

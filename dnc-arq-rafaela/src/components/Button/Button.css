@@ -26,7 +26,7 @@ button {
 
 .button.secondary {
     background-color: #1D1D1D;
-    color: #fff;
+    color: white;
 }
 
 .button.secondary:hover {
